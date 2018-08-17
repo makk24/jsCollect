@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .yuantest {
+      left: 255px;
+      top: 52px;
+      width: 180px;
+      height: 180px;
+      font-size: 32px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      background-color: #f2f2f2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .yuantest1 {
+      border-radius: 50%;
+      border: 6px solid #fff;
+      background-image: linear-gradient(-160deg, #31caf4 0%, #33a0fe 100%);
+      width: 148px;
+      height: 148px;
+      font-family: PingFangSC-Regular;
+      font-size: 40px;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slice {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      clip: rect(auto, auto, auto, auto);
+    }
+
+    .smaill_slice {
+      clip: rect(0em, 180px, 180px, 90px);
+    }
+
+    .bar {
+      position: absolute;
+      border: 6px solid #32bbf8;
+      width: 168px;
+      height: 168px;
+      clip: rect(0px, 90px, 180px, 0px);
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      transform: rotate(0deg);
+    }
+
+    .fill {
+      border-color: #32bbf8 !important;
+      transform: rotate(180deg);
+      position: absolute;
+      border: 6px solid #32bbf8;
+      width: 168px;
+      height: 168px;
+      clip: rect(0px, 90px, 180px, 0px);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+    }
+
+    .smaill_fill {
+      transform: rotate(0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class='yuantest'>
+    <div class='yuantest1'>
+      <div class=''>
+        <font decode="true">答对 23道
+        </font>
+      </div>
+    </div>
+    <div class="slice smaill_slice">
+      <div class='bar' style="transform: rotate(50deg);"></div>
+      <div class="fill  smaill_fill"></div>
+    </div>
+  </div>
+  <div class='yuantest'>
+      <div class='yuantest1'>
+        <div class=''>
+          <font decode="true">答对 23道
+          </font>
+        </div>
+      </div>
+      <div class="slice">
+        <div class='bar' style="transform: rotate(250deg);"></div>
+        <div class="fill "></div>
+      </div>
+    </div>
+</body>
+
+</html>
