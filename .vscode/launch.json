@@ -5,6 +5,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/js 设计模式/单例模式/test.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
       "type": "chrome",
       "request": "launch",
       "name": "启动 Chrome 并打开 localhost",
