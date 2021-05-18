@@ -35,3 +35,26 @@ function test(){
   console.log(this)
 }
 new test()
+
+
+var func =(function(){
+  let ishave;
+  return function(name){
+    if(ishave){
+    return ishave;
+    }else{
+      return ishave=new singlenton(name)
+    }
+
+  }
+})();
+let singlenton=function(name){
+  this.name=name
+}
+singlenton.prototype.getName=function(){
+  console.log(this.name)
+}
+let a=new func(1)
+let b=new func(2)
+a.getName()
+b.getName()

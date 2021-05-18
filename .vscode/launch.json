@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/js 设计模式/单例模式/test.js",
+      "program": "${workspaceFolder}/handleArray.js",
       "skipFiles": [
         "<node_internals>/**"
       ]
