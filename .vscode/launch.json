@@ -7,6 +7,15 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "摩尔投票",
+      "program": "${workspaceFolder}/算法/摩尔投票/index.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/handleArray.js",
       "skipFiles": [
