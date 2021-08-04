@@ -4,11 +4,12 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
       "name": "摩尔投票",
-      "program": "${workspaceFolder}/算法/摩尔投票/index.js",
+      "program": "${workspaceFolder}/算法/h值.js",
       "skipFiles": [
         "<node_internals>/**"
       ]
