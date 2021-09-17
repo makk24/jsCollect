@@ -4,12 +4,23 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+  {
+    "name": "设计模式",
+    "program": "${workspaceFolder}/js 设计模式/工厂模式/index.js",
+    "request": "launch",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  },
+
+
 
     {
       "type": "node",
       "request": "launch",
       "name": "摩尔投票",
-      "program": "${workspaceFolder}/算法/h值.js",
+      "program": "${workspaceFolder}/算法/index.js",
       "skipFiles": [
         "<node_internals>/**"
       ]
