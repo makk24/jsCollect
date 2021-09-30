@@ -451,3 +451,70 @@ function find(arr, item) {
 
 let mm1 = cloneForce({ a: [1, 2, 3], b: 1 })
 log(mm1)
+
+
+//apply(this,arr)  call(this,..arr)  bind(this,..arr)
+Array.prototype.mybind=function(obj){
+  let fn=this
+  //第0位是this，所以得从第一位开始裁剪
+  var args = Array.prototype.slice.call(arguments, 1);
+  var bound=function(...arr){
+    console.log('aa',this.constructor==bound)
+    fn.apply(obj,[...args,...arr])
+  }
+
+  return bound
+}
+var bb={
+  a:2
+}
+function aa(m="bb",n='nn',t=''){
+  var a=1
+  console.log(m+this.a+n+t);
+}
+var tmp=aa.myBind(bb,'cc')
+tmp()
+var tmp1=new tmp()
+log(typeof tmp1)
+
+
+Function.prototype.bind_ = function (obj) {
+  if (typeof this !== "function") {
+      throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+  };
+  var args = Array.prototype.slice.call(arguments, 1);
+  var fn = this;
+  //创建中介函数
+  var fn_ = function () {};
+  var bound = function () {
+      var params = Array.prototype.slice.call(arguments);
+      //通过constructor判断调用方式，为true this指向实例，否则为obj
+      fn.apply(this.constructor === fn ? this : obj, args.concat(params));
+      console.log(this);
+  };
+  fn_.prototype = fn.prototype;
+  bound.prototype = new fn_();
+  return bound;
+};
+
+var z = 0;
+var obj = {
+  z: 1
+};
+
+function fn(x, y) {
+  this.name = '听风是风';
+  console.log(this.z);
+  console.log(x);
+  console.log(y);
+};
+fn.prototype.age = 26;
+
+var bound = fn.bind_(obj, 2);
+var person = new bound(3); //undefined 2 3
+
+console.log(person.name); //听风是风
+console.log(person.age); //26
+person.__proto__.age = 18;
+var person = new fn();
+console.log(person.age); //26
